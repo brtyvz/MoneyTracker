@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MoneyTracker
+
+  Created by Berat Yavuz on 30.06.2022.
+  
+*/
+"inputs" = "Giriş";
+"settings" = "Ayarlar";
+"calendar" = "Takvim";
+"history" = "Harcamalar";
+"statistics" = "İstatistik";
