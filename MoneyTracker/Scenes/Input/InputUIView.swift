@@ -10,16 +10,24 @@ import SwiftUI
 struct InputUIView: View {
     @State var text = ""
     var body: some View {
-        ZStack{
-    GeometryReader{ reader in
-      Text(text)
-        Spacer()
-        KeyPad(string: $text)
-            .padding()
-            .frame(width: reader.size.width, height: reader.size.width * 0.4, alignment: .center)
-            .padding(.bottom)
-    }
-    }
+        NavigationView {
+            VStack{
+//        GeometryReader{ reader in
+          Text(text)
+//            Spacer()
+//            KeyPad(string: $text)
+//                .padding()
+//                .frame(width: reader.size.width, height: reader.size.width * 0.4, alignment: .center)
+//                .padding(.bottom)
+//        }
+                Spacer()
+                KeyPad(string: $text)
+                    .padding()
+                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height*0.4, alignment: .center)
+                    .padding(.bottom)
+            }.navigationTitle(Text("add_expense"))
+            
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

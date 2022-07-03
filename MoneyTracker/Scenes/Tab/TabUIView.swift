@@ -54,6 +54,9 @@ struct TabUIView: View {
                                     showPopUp.toggle()
                                 }
                             }
+                            .sheet(isPresented: $showPopUp) {
+                                InputUIView()
+                            }
                         TabBarIcon(viewRouter: viewRouter, assignedPage: .stats, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "chart.bar.fill", tabName: "statistics".localized())
                         TabBarIcon(viewRouter: viewRouter, assignedPage: .settings, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "gear", tabName: "settings".localized())
                     }
@@ -72,35 +75,36 @@ struct TabUIView: View {
 //            .preferredColorScheme(.light)
 //    }
 //}
-
 struct PlusMenu: View {
     
     let widthAndHeight: CGFloat
     
     var body: some View {
         HStack(spacing: 50) {
-            ZStack {
-                Circle()
-                    .foregroundColor(Color("DarkPurple"))
-                    .frame(width: widthAndHeight, height: widthAndHeight)
-                Image(systemName: "record.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(15)
-                    .frame(width: widthAndHeight, height: widthAndHeight)
-                    .foregroundColor(.white)
-            }
-            ZStack {
-                Circle()
-                    .foregroundColor(Color("DarkPurple"))
-                    .frame(width: widthAndHeight, height: widthAndHeight)
-                Image(systemName: "folder")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(15)
-                    .frame(width: widthAndHeight, height: widthAndHeight)
-                    .foregroundColor(.white)
-            }
+//            plus içerisindeki menüler
+            
+//            ZStack {
+//                Circle()
+//                    .foregroundColor(Color("DarkPurple"))
+//                    .frame(width: widthAndHeight, height: widthAndHeight)
+//                Image(systemName: "record.circle")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .padding(15)
+//                    .frame(width: widthAndHeight, height: widthAndHeight)
+//                    .foregroundColor(.white)
+//            }
+//            ZStack {
+//                Circle()
+//                    .foregroundColor(Color("DarkPurple"))
+//                    .frame(width: widthAndHeight, height: widthAndHeight)
+//                Image(systemName: "folder")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .padding(15)
+//                    .frame(width: widthAndHeight, height: widthAndHeight)
+//                    .foregroundColor(.white)
+//            }
         }
             .transition(.scale)
     }
