@@ -15,7 +15,7 @@ struct TabUIView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
+            VStack(spacing : -3 ) {
                 Spacer()
                 switch viewRouter.currentPage {
                 case .history:
@@ -64,7 +64,8 @@ struct TabUIView: View {
                     .background(Color("TabBarBackground").shadow(radius: 2))
                 }
             }
-                .edgesIgnoringSafeArea(.bottom)
+                .edgesIgnoringSafeArea(.all)
+              
         }
     }
 }

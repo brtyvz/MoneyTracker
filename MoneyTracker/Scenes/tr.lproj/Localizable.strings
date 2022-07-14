@@ -11,3 +11,9 @@
 "history" = "Harcamalar";
 "statistics" = "İstatistik";
 "add_expense" = "Harcama Ekle";
+"save" = "Kaydet";
+"selected_currency" = "Seçili Para Birimi";
+"input_note" = "Not Ekle";
+"clothes" = "Giyim";
+"food" = "Yemek";
+"education" = "Eğitim";

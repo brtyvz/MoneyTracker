@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f0fad1d51f9710cbd0ac6d49121d8b7fddd5c7f6"
+      }
+    },
+    {
       "identity" : "localize-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marmelroy/Localize-Swift",

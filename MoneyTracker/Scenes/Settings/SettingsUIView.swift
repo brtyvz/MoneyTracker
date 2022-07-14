@@ -8,10 +8,21 @@
 import SwiftUI
 
 struct SettingsUIView: View {
+    @State private var currencyIndex = AppUserDefaults.currencyIndex
+    @State private var currencyList = ["$","₺","€"]
     var body: some View {
         NavigationView {
-            Text("settings")
-                .navigationTitle(Text("settings"))
+            Form {
+                Picker("selected_currency", selection: $currencyIndex) {
+                    ForEach(0 ..< currencyList.count) {
+                        Text(self.currencyList[$0]).tag($0)
+                               }
+                }.onChange(of: currencyIndex, perform: { newValue in
+                    AppUserDefaults.currency = self.currencyList[newValue]
+                    AppUserDefaults.currencyIndex = newValue
+                })
+                .pickerStyle(.automatic)
+            }.navigationTitle(Text("settings"))
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
