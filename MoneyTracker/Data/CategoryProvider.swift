@@ -12,11 +12,14 @@ struct MCategory : Identifiable {
    var id = UUID()
     var categoryName : String
 }
+    
+    
+
 class CategoryProvider : ObservableObject {
     @Published var categories : [MCategory] = []
     init(){
-        categories.append(MCategory(categoryName:"👗Clothes"))
-        categories.append(MCategory(categoryName: "🍔Food"))
-        categories.append(MCategory(categoryName: "✍️Education"))
+        for i in 1...14 {
+            categories.append(MCategory(categoryName: "category_\(i)".localized()))
+        }
     }
 }

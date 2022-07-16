@@ -17,3 +17,21 @@
 "clothes" = "Clothes";
 "food" = "Food";
 "education" = "Education";
+"select_date" = "Select Date";
+"category" = "Category";
+
+"category_1" = "Food";
+"category_2" = "Clothing";
+"category_3" = "Fruits&Vegetables";
+"category_4" = "Shopping";
+"category_5" = "Transportation";
+"category_6" = "Home";
+"category_7" = "Travel&Holiday";
+"category_8" = "Bills";
+"category_9" = "Car";
+"category_10" = "Snacks";
+"category_11" = "Beauty";
+"category_12" = "Entertainment";
+"category_13" = "Education";
+"category_14" = "Other";
+

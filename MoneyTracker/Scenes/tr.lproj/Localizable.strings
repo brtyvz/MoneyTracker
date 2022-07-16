@@ -17,3 +17,20 @@
 "clothes" = "Giyim";
 "food" = "Yemek";
 "education" = "Eğitim";
+"select_date" = "Tarih Seç";
+"category" = "Kategori";
+
+"category_1" = "Yeme&İçme";
+"category_2" = "Giyim";
+"category_3" = "Meyve&Sebze";
+"category_4" = "Alışveriş";
+"category_5" = "Ulaşım";
+"category_6" = "Ev";
+"category_7" = "Seyehat&Tatil";
+"category_8" = "Fatura";
+"category_9" = "Araba";
+"category_10" = "Atıştırmalık";
+"category_11" = "Güzellik&Bakım";
+"category_12" = "Eğlence";
+"category_13" = "Eğitim";
+"category_14" = "Diğer";
