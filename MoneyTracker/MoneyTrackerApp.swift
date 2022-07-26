@@ -11,12 +11,14 @@ import IQKeyboardManagerSwift
 struct MoneyTrackerApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject var viewRouter = ViewRouter()
+    @StateObject var settingsViewModel = SettingsViewModel()
     init() {
         IQKeyboardManager.shared.enable = true
     }
     var body: some Scene {
         WindowGroup {
             TabUIView(viewRouter: viewRouter)
+                .environmentObject(settingsViewModel)
                 .environment(\.managedObjectContext,persistenceController.container.viewContext )
         }
     }

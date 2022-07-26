@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct CalendarUIView: View {
+    
+    @EnvironmentObject var settings: SettingsViewModel
+    @ObservedObject var viewModel = CalendarViewModel()
+    @State var actionInput : Int? = 0
+    @State var selectedDate = Date()
+    @State var item : Item? = nil
     var body: some View {
         NavigationView {
-            Text("calendar")
-                .navigationTitle(Text("calendar"))
+            ZStack {
+                
+                Color(UIColor.systemGroupedBackground)
+                    .edgesIgnoringSafeArea(.all)
+                NavigationLink(destination: Text("deneme"), tag: 1, selection: $actionInput){
+                    EmptyView()
+                }
+                CalendarView(appThemeColor: $settings.appThemeColor, item: $item, actionInput: $actionInput, selectedDate: $selectedDate, items: $viewModel.items)
+                    .cornerRadius(8).padding()
+            }.onAppear(perform:viewModel.onAppear)
+            .navigationTitle("calendar")
         }.navigationViewStyle(StackNavigationViewStyle())
+            
     }
 }
 

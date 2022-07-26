@@ -6,7 +6,7 @@
 //
 
 import CoreData
-
+/*
 struct PersistenceController {
     static let shared = PersistenceController()
 
@@ -54,3 +54,4 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
+*/

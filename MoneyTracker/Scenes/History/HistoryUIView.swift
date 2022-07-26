@@ -21,14 +21,28 @@ struct HistoryUIView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                     } label: {
-                        HStack {
+                        HStack{
+                            VStack(alignment:.leading) {
                             if let note = item.note {
                                 Text("\(note)")
-                                    .fontWeight(.bold)
+                                   
                             }
-                            Text("\(item.value)")
+                         
+                            
                             Text(item.timestamp!, formatter: itemFormatter)
                                 .foregroundColor(.gray)
+                            if let category = item.categoryName {
+                                Text("\(category)")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                            HStack {
+                                Text(AppUserDefaults.currency)
+                                Text(String(format: "%.2f", item.value)).fontWeight(.bold)
+                            }.padding(.leading,65)
+                            
+                            
+                          
                         }
                     }
                 }.onDelete(perform: deleteItems)

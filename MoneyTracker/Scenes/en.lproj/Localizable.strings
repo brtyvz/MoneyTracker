@@ -1,13 +1,4 @@
-/* 
- Localizable.strings
- MoneyTracker
- 
- Created by Berat Yavuz on 30.06.2022.
- 
- */
-"inputs" = "Inputs";
-"settings" = "Settings";
-"calendar" = "Calendar";
+/*  
 "history" = "Expenses";
 "statistics" = "Statistics";
 "add_expense" = "Add Expense";
@@ -19,7 +10,7 @@
 "education" = "Education";
 "select_date" = "Select Date";
 "category" = "Category";
-
+ 
 "category_1" = "Food";
 "category_2" = "Clothing";
 "category_3" = "Fruits&Vegetables";

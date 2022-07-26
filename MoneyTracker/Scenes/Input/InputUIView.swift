@@ -21,8 +21,7 @@ struct InputUIView: View {
             ZStack {
                 Color(UIColor.systemGroupedBackground).edgesIgnoringSafeArea(.all)
                 GeometryReader { reader in
-                    VStack{
-                        
+                    VStack {
                         HStack {
                             Text(currency)
                                 .font(.title)
@@ -53,7 +52,6 @@ struct InputUIView: View {
                                         Text(category.categoryName)
                                     }
                                 }
-
                             }
                         }
                         label : {
@@ -99,8 +97,9 @@ struct InputUIView: View {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.value = value
-            newItem.timestamp = Date()
+            newItem.timestamp = date
             newItem.note = note
+            newItem.categoryName = selectedCategory?.categoryName
             
             do {
                 try viewContext.save()

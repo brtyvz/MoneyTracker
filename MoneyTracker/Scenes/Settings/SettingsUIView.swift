@@ -9,16 +9,17 @@ import SwiftUI
 
 struct SettingsUIView: View {
     @State private var currencyIndex = AppUserDefaults.currencyIndex
-    @State private var currencyList = ["$","₺","€"]
+   
+    @ObservedObject var currencyViewModel = CurrencyViewModel()
     var body: some View {
         NavigationView {
             Form {
                 Picker("selected_currency", selection: $currencyIndex) {
-                    ForEach(0 ..< currencyList.count) {
-                        Text(self.currencyList[$0]).tag($0)
+                    ForEach(0 ..< currencyViewModel.currencyValues.count) {
+                        Text(self.currencyViewModel.currencyValues[$0]).tag($0)
                                }
                 }.onChange(of: currencyIndex, perform: { newValue in
-                    AppUserDefaults.currency = self.currencyList[newValue]
+                    AppUserDefaults.currency = self.currencyViewModel.currencyValues[newValue]
                     AppUserDefaults.currencyIndex = newValue
                 })
                 .pickerStyle(.automatic)
