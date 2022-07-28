@@ -83,7 +83,7 @@ struct CalendarView : UIViewRepresentable {
             let totalValue = items.filter { item in
                 item.timestamp!.startOfDay == date.startOfDay
                 
-            }.map({$0.value}).reduce(0,+)
+            }.map({$0.value}).reduce(0, +)
             
             if totalValue == 0.0 {
                 return ""

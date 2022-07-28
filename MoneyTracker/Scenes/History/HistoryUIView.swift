@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HistoryUIView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
+    @EnvironmentObject var settings: SettingsViewModel
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -19,31 +19,9 @@ struct HistoryUIView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                       HistoryDetailView(item: item)
                     } label: {
-                        HStack{
-                            VStack(alignment:.leading) {
-                            if let note = item.note {
-                                Text("\(note)")
-                                   
-                            }
-                         
-                            
-                            Text(item.timestamp!, formatter: itemFormatter)
-                                .foregroundColor(.gray)
-                            if let category = item.categoryName {
-                                Text("\(category)")
-                                    .foregroundColor(.blue)
-                            }
-                        }
-                            HStack {
-                                Text(AppUserDefaults.currency)
-                                Text(String(format: "%.2f", item.value)).fontWeight(.bold)
-                            }.padding(.leading,65)
-                            
-                            
-                          
-                        }
+                        HistoryCell(item: item, settings: _settings, itemFormatter: itemFormatter)
                     }
                 }.onDelete(perform: deleteItems)
             }

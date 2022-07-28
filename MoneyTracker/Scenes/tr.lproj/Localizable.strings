@@ -20,6 +20,13 @@
 "select_date" = "Tarih Seç";
 "category" = "Kategori";
 
+"app_theme" = "Uygulama teması";
+"preferences" = "Tercihler";
+"appearance" = "Görünüm";
+"default_appearance" = "Varsayılan görünüm";
+"light_appearance" = "Açık tema";
+"dark_appearance" = "Koyu tema";
+
 "category_1" = "Yeme&İçme";
 "category_2" = "Giyim";
 "category_3" = "Meyve&Sebze";

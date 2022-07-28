@@ -34,11 +34,14 @@
 		5B963EDC288D7A5A00099508 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B963EDB288D7A5A00099508 /* CalendarViewModel.swift */; };
 		5B963EDE288D7EA400099508 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B963EDD288D7EA400099508 /* SettingsViewModel.swift */; };
 		5B963EE0288EB96100099508 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B963EDF288EB96100099508 /* PersistenceController.swift */; };
+		5B963EE2288FF28300099508 /* CustomColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B963EE1288FF28300099508 /* CustomColorPicker.swift */; };
 		5BB56F68286DB12800C2AA63 /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB56F67286DB12800C2AA63 /* TabUIView.swift */; };
 		5BB56F6D286DB27300C2AA63 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB56F6C286DB27300C2AA63 /* SettingsUIView.swift */; };
 		5BB56F6F286DB28300C2AA63 /* InputUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB56F6E286DB28300C2AA63 /* InputUIView.swift */; };
 		5BB56F75286DBD7800C2AA63 /* CalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB56F74286DBD7800C2AA63 /* CalendarUIView.swift */; };
 		5BB56F76286DBFC400C2AA63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB56F78286DBFC400C2AA63 /* Localizable.strings */; };
+		5BB950CC28932F4A00F654CD /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB950CB28932F4A00F654CD /* HistoryCell.swift */; };
+		5BB950CE289331CA00F654CD /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB950CD289331CA00F654CD /* HistoryDetailView.swift */; };
 		5BFBCC342882EB0E009A24F5 /* MoneyTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBCC322882EB0E009A24F5 /* MoneyTracker.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -67,12 +70,15 @@
 		5B963EDB288D7A5A00099508 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		5B963EDD288D7EA400099508 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5B963EDF288EB96100099508 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		5B963EE1288FF28300099508 /* CustomColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorPicker.swift; sourceTree = "<group>"; };
 		5BB56F67286DB12800C2AA63 /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
 		5BB56F6C286DB27300C2AA63 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		5BB56F6E286DB28300C2AA63 /* InputUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputUIView.swift; sourceTree = "<group>"; };
 		5BB56F74286DBD7800C2AA63 /* CalendarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIView.swift; sourceTree = "<group>"; };
 		5BB56F77286DBFC400C2AA63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BB56F79286DBFF600C2AA63 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BB950CB28932F4A00F654CD /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		5BB950CD289331CA00F654CD /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		5BFBCC332882EB0E009A24F5 /* MoneyTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyTracker.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5B621C91286E4D130028D2A2 /* KeyPadButton.swift */,
+				5B963EE1288FF28300099508 /* CustomColorPicker.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -141,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				5B6660F7286F8D7F004C7480 /* HistoryUIView.swift */,
+				5BB950CB28932F4A00F654CD /* HistoryCell.swift */,
+				5BB950CD289331CA00F654CD /* HistoryDetailView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -336,8 +345,11 @@
 				5B6660F0286F1B9C004C7480 /* ViewRouter.swift in Sources */,
 				5B5592B4288AA1220025D678 /* Color+Extensions.swift in Sources */,
 				5BFBCC342882EB0E009A24F5 /* MoneyTracker.xcdatamodeld in Sources */,
+				5BB950CC28932F4A00F654CD /* HistoryCell.swift in Sources */,
 				5BB56F6F286DB28300C2AA63 /* InputUIView.swift in Sources */,
+				5BB950CE289331CA00F654CD /* HistoryDetailView.swift in Sources */,
 				5B4D9828287ED99200473091 /* AppUserDefaults.swift in Sources */,
+				5B963EE2288FF28300099508 /* CustomColorPicker.swift in Sources */,
 				5B6660F8286F8D7F004C7480 /* HistoryUIView.swift in Sources */,
 				5B4D9823287D728300473091 /* SaveButton.swift in Sources */,
 				5B64034028806EA7003E0074 /* HorizontalCategorySelector.swift in Sources */,

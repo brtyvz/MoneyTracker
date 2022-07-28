@@ -10,7 +10,8 @@ import Localize_Swift
 struct TabUIView: View {
     
     @StateObject var viewRouter: ViewRouter
-    
+//    @StateObject var settingsViewModel = SettingsViewModel()
+    @EnvironmentObject var settings: SettingsViewModel
     @State var showPopUp = false
     
     var body: some View {
@@ -45,7 +46,7 @@ struct TabUIView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: geometry.size.width/7-6 , height: geometry.size.width/7-6)
-                                .foregroundColor(Color("DarkPurple"))
+                                .foregroundColor(Color.appTheme)
                                 .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
                         }
                             .offset(y: -geometry.size.height/8/2)

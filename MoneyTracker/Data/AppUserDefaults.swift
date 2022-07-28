@@ -15,4 +15,7 @@ struct AppUserDefaults {
     
     @UserDefault("appThemeColor", defaultValue: "")
     static var appThemeColor: String
+    
+    @UserDefault("preferredTheme", defaultValue: 0)
+    static var preferredTheme: Int
 }

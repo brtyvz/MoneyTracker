@@ -10,6 +10,7 @@ import SwiftUI
 struct InputUIView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentaitonMode
+    @EnvironmentObject var settings: SettingsViewModel
     @State var text = "0"
     @State var note = ""
     @State var selectedCategory : MCategory? = nil
@@ -56,10 +57,10 @@ struct InputUIView: View {
                         }
                         label : {
                             if let selectedCategory = selectedCategory {
-                                Label(selectedCategory.categoryName, systemImage: "checkmark")
+                                Label(selectedCategory.categoryName, systemImage: "checkmark").foregroundColor(settings.appThemeColor)
                             }
                             else {
-                                Label("category", systemImage: "chevron.down.circle.fill")
+                                Label("category", systemImage: "chevron.down.circle.fill").foregroundColor(settings.appThemeColor)
                             }
                         }
                         //keypad
@@ -73,7 +74,7 @@ struct InputUIView: View {
                             }
                             presentaitonMode.wrappedValue.dismiss()
                         } label: {
-                            SaveButton(color: text == "0" ? Color.gray : Color.purple )
+                            SaveButton(color: text == "0" ? Color.gray : settings.appThemeColor )
                                 .padding(.horizontal)
                                 .padding(.vertical,8)
                         }.disabled(text == "0")

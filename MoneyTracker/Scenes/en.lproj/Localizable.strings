@@ -1,4 +1,4 @@
-/*  
+
 "history" = "Expenses";
 "statistics" = "Statistics";
 "add_expense" = "Add Expense";
@@ -11,6 +11,13 @@
 "select_date" = "Select Date";
 "category" = "Category";
  
+"app_theme" = "App theme color";
+"preferences" = "Preferences";
+"appearance" = "Theme";
+"default_appearance" = "System";
+"light_appearance" = "Light";
+"dark_appearance" = "Darkd";
+
 "category_1" = "Food";
 "category_2" = "Clothing";
 "category_3" = "Fruits&Vegetables";

@@ -19,6 +19,8 @@ struct MoneyTrackerApp: App {
         WindowGroup {
             TabUIView(viewRouter: viewRouter)
                 .environmentObject(settingsViewModel)
+                .accentColor(settingsViewModel.appThemeColor)
+                .preferredColorScheme(settingsViewModel.theme)
                 .environment(\.managedObjectContext,persistenceController.container.viewContext )
         }
     }

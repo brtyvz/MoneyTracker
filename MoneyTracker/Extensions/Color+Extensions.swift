@@ -62,7 +62,6 @@ extension Color {
             _ = string.removeFirst()
         }
         
-        
         if !string.count.isMultiple(of: 2), let last = string.last {
             string.append(last)
         }
@@ -132,7 +131,7 @@ extension UIColor {
         return Color.appTheme.uiColor()
     }
     
-    func toNewString() -> String {
+    func toHexString() -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
