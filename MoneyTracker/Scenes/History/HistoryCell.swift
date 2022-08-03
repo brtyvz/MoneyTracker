@@ -11,30 +11,33 @@ struct HistoryCell: View {
     var item : Item
     @EnvironmentObject var settings: SettingsViewModel
     var itemFormatter: DateFormatter
+    var color : Color
     var body: some View {
         HStack{
             VStack(alignment:.leading) {
-            if let note = item.note {
-                Text("\(note)")
-                   
+                if let note = item.note {
+                    if !note.isEmpty {
+                        Text("\(note)")
+                            .foregroundColor(Color(.label))
+                    }
+                }
+                if let category = item.categoryName {
+                    Text("\(category)")
+                        .foregroundColor(settings.appThemeColor)
+                }
             }
-         
-            
-            Text(item.timestamp!, formatter: itemFormatter)
-                .foregroundColor(.gray)
-            if let category = item.categoryName {
-                Text("\(category)")
-                    .foregroundColor(settings.appThemeColor)
-            }
-        }
+            Spacer()
+            VStack(alignment: .trailing){
             HStack {
                 Text(AppUserDefaults.currency)
-                Text(String(format: "%.2f", item.value)).fontWeight(.bold)
-            }.padding(.leading,65)
-            
-            
-          
+                    .foregroundColor(.secondary)
+                    .font(.subheadline)
+                Text(String(format: "%.2f", item.value))
+                    .fontWeight(.bold)
+            }
         }
+        }
+        .background(Color(UIColor.systemBackground))
     }
 }
 

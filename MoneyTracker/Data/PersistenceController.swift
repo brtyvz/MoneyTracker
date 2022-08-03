@@ -42,4 +42,13 @@ struct PersistenceController {
             handler([])
         }
     }
+    
+    func getGroupedItems(handler: @escaping([String? : [Item]]) -> Void) {
+        getItems { items in
+            let dict = Dictionary(grouping: items, by: { $0.timestamp?.toReadableFormat()})
+            
+        handler(dict)
+        }
+    }
+    
 }

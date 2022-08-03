@@ -10,6 +10,7 @@
 "education" = "Education";
 "select_date" = "Select Date";
 "category" = "Category";
+"total:" = "Total:";
  
 "app_theme" = "App theme color";
 "preferences" = "Preferences";

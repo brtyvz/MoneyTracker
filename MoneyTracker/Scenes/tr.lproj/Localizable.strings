@@ -19,6 +19,8 @@
 "education" = "Eğitim";
 "select_date" = "Tarih Seç";
 "category" = "Kategori";
+"total:" = "Toplam:";
+
 
 "app_theme" = "Uygulama teması";
 "preferences" = "Tercihler";

@@ -10,21 +10,44 @@ import SwiftUI
 struct HistoryUIView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var settings: SettingsViewModel
+    @ObservedObject var viewModel = HistoryViewModel()
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                       HistoryDetailView(item: item)
-                    } label: {
-                        HistoryCell(item: item, settings: _settings, itemFormatter: itemFormatter)
+            ZStack {
+                Color(UIColor.systemGroupedBackground).edgesIgnoringSafeArea(.all)
+                //                ScrollView {
+                //                    LazyVStack(spacing: 0) {
+                List{
+                    ForEach(viewModel.grouped) { section in
+                        Section(header:  HistoryHeaderView(headerName:section.name),footer: HistoryFooterCell(totalCount: section.totalCount())
+                                
+                        )
+                        {
+                            ForEach(section.items) { item in
+                                Button {
+                                    //                                        self.item = item
+                                    //                                        self.actionAddDiary = 1
+                                } label: {
+                                    HistoryCell (
+                                        item: item,
+                                        itemFormatter: itemFormatter,
+                                        color: settings.appThemeColor
+                                    )
+                                }
+                                
+                            }
+                        }.modifier(SectionHeaderStyle())
                     }
-                }.onDelete(perform: deleteItems)
+                }
+                //                    }
+                //                }
             }
+            .onAppear(perform: {self.viewModel.getGroupedItems()})
+            
             .navigationTitle(Text("history"))
         }.navigationViewStyle(StackNavigationViewStyle())
     }
@@ -53,3 +76,18 @@ struct HistoryUIView_Previews: PreviewProvider {
         HistoryUIView()
     }
 }
+
+
+
+
+
+
+
+
+//ForEach(items) { item in
+//    NavigationLink {
+//       HistoryDetailView(item: item)
+//    } label: {
+//        HistoryCell(item: item, settings: _settings, itemFormatter: itemFormatter)
+//    }
+//}.onDelete(perform: deleteItems)
